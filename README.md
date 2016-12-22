@@ -13,7 +13,7 @@ python manage.py runserver
 ```
 
 # Producing the error
-Open http://localhost:8000/
+Open http://127.0.0.1:8000/
 
 Will receive the following error:
 
