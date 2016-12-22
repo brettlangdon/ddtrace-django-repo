@@ -12,6 +12,7 @@ pip install django==1.9.4 https://github.com/DataDog/dd-trace-py/archive/v0.5.2.
 python manage.py runserver
 ```
 
+# Producing the error
 Open http://localhost:8000/
 
 Will receive the following error:
@@ -42,7 +43,7 @@ Traceback (most recent call last):
 error: getaddrinfo() argument 2 must be integer or string
 ```
 
-Reproducing via Python repl:
+# Reproducing via Python repl
 
 ```
 $ python
@@ -63,7 +64,7 @@ socket.error: getaddrinfo() argument 2 must be integer or string
 
 `getaddrinfo` only allows `str` or `int` for the port number and errors on `unicode`. This is not an issue for Python 3.
 
-Fixing the problem:
+# Fixing the problem
 
 ```python
 DATADOG_TRACE = {
